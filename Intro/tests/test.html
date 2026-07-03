@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 ERROR</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="shortcut icon" href="./test-images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="floating-box" style="left: 10%; top: 10%;"></div>
+        <div class="floating-box" style="right: 15%; top: 20%; animation-delay: 1s;"></div>
+        <div class="floating-box" style="left: 20%; bottom: 15%; animation-delay: 2s;"></div>
+        
+        <h1>404 ERROR</h1>
+        
+        <div class="text-scramble" id="scramble">D0N'T T0UCH THE BUTT0N</div>
+        
+        <button onclick="explode()">404r3bugg34-37707</button>
+    </div>
+    
+    <div class="chaos-text" style="top: 20%; left: 5%; color: #ff3333;">404</div>
+    <div class="chaos-text" style="top: 60%; right: 10%; color: #D32F2F; animation-delay: 2s;">ERROR</div>
+    <div class="chaos-text" style="bottom: 20%; left: 40%; color: #DC3545; animation-delay: 4s;">FAILED</div>
+    
+    <script>
+        let clickCount = 0;
+        const colors = ['#ff0000', '#990000', '#ffff00', '#FF4D4D', '#B00020', '#ff6600'];
+        
+        function explode() {
+            clickCount++;
+
+            const h1 = document.querySelector('h1');
+            h1.style.animationDuration = (3 - clickCount * 0.2) + 's';
+
+            const randomText = ['FAILED', 'ASDFGHJKL', 'ERROR 404', 'UNDEFINED', '¯\\_(ツ)_/¯', 'CANNOT BE FIXED'];
+            const randomIndex = Math.floor(Math.random() * randomText.length);
+            const text = document.createElement('div');
+            text.textContent = randomText[randomIndex];
+            text.style.position = 'fixed';
+            text.style.left = Math.random() * 100 + '%';
+            text.style.top = Math.random() * 100 + '%';
+            text.style.fontSize = Math.random() * 5 + 2 + 'vw';
+            text.style.color = colors[Math.floor(Math.random() * colors.length)];
+            text.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+            text.style.fontWeight = 'bold';
+            text.style.pointerEvents = 'none';
+            text.style.animation = 'chaos-move ' + (Math.random() * 5 + 3) + 's linear infinite';
+            document.body.appendChild(text);
+
+            const body = document.body;
+            const currentDuration = parseFloat(window.getComputedStyle(body).animationDuration);
+            body.style.animationDuration = (currentDuration - 0.5) + 's';
+
+            const container = document.querySelector('.container');
+            container.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
+            setTimeout(() => {
+                container.style.transform = 'translate(0, 0)';
+            }, 100);
+
+            const scramble = document.getElementById('scramble');
+            const warnings = ['STOP IT!!', 'QUIT IT!!', 'PLS STOP!!', 'I\'M SCARED!!', 'AAAHHHHH!!'];
+            scramble.textContent = warnings[Math.floor(Math.random() * warnings.length)];
+
+            if (clickCount > 5) {
+                document.body.style.filter = `hue-rotate(${clickCount * 30}deg) blur(${clickCount * 0.5}px)`;
+            }
+        }
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.floating-box').forEach(box => {
+                box.style.transform = `rotate(${Math.random() * 360}deg)`;
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (clickCount > 0) {
+                const h1 = document.querySelector('h1');
+                const x = (e.clientX - window.innerWidth / 2) * 0.01;
+                const y = (e.clientY - window.innerHeight / 2) * 0.01;
+                h1.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+            }
+        });
+    </script>
+</body>
+</html>
