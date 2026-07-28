@@ -8,22 +8,6 @@ main {
     gap: 1.5rem;
 }
 
-.header {
-    background-color:#fff;
-    text-align: center;
-}
-
-.header-title {
-    color: #19b84c;
-    font-family: 'Audiowide', sans-serif;
-    font-size: 48px;
-}
-
-.header-description {
-    font-size: 20px;
-    margin: 20px;
-}
-
 .package {
     width: 85%;
     margin: 0;

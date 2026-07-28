@@ -20,13 +20,13 @@ body {
 }
 
 #product-overview h1 {
-    color: white;
+    color: #fff;
     font-family: 'Audiowide', sans-serif;
     font-size: 48px;
 }
 
 #product-overview h2 {
-    color: white;
+    color: #fff;
     font-family: 'Source Sans 3', sans-serif;
 }
 
@@ -75,12 +75,12 @@ body {
 
 .main-nav__item a:hover,
 .main-nav__item a:active {
-    color: white;
-    border-bottom: 5px solid white;
+    color: #fff;
+    border-bottom: 5px solid #fff;
 }
 
 .main-nav__item--cta a {
-    color: white;
+    color: #fff;
     background: #ff1b68;
     padding: 8px 16px;
     border-radius: 8px;
@@ -89,7 +89,7 @@ body {
 .main-nav__item--cta a:hover,
 .main-nav__item--cta a:active {
     color: #ff1b68;
-    background: white;
+    background: #fff;
     border: none;
 }
 
@@ -118,11 +118,11 @@ body {
 
 .plan--highlighted {
     background: #19b84c;
-    color: white;
+    color: #fff;
 }
 
 .plan__annotation {
-    background: white;
+    background: #fff;
     color: #19b84c;
     padding: 8px;
     border-radius: 8px;
@@ -137,7 +137,7 @@ body {
 }
 
 .plan--highlighted .plan__title {
-    color: white;
+    color: #fff;
 }
 
 .plan--highlighted .plan__price {
@@ -161,7 +161,7 @@ body {
 }
 
 #key-features .section-title {
-    color: white;
+    color: #fff;
     margin: 32px;
 }
 
@@ -192,6 +192,6 @@ body {
 .key-feature__description {
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: #fff;
     font-size: 20px;
 }

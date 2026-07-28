@@ -18,11 +18,11 @@ code {
 
 li + li {
     background: black;
-    color: white;
+    color: #fff;
 }
 
 ol li {
     padding: 5px;
     background: black;
-    color: white;
+    color: #fff;
 }

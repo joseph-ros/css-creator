@@ -17,10 +17,30 @@ body {
     font-family: 'Audiowide', sans-serif;
 }
 
+.header {
+    background-color:#fff;
+    text-align: center;
+}
+
+.header-title {
+    color: #19b84c;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 48px;
+}
+
+.header-description {
+    font-size: 20px;
+    margin: 20px;
+}
+
+
 .main-header {
     width: 100%;
     background: #2ddf5c;
     padding: 8px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .main-header > div {
@@ -63,12 +83,12 @@ body {
 
 .main-nav__item a:hover,
 .main-nav__item a:active {
-    color: white;
-    border-bottom: 5px solid white;
+    color: #fff;
+    border-bottom: 5px solid #fff;
 }
 
 .main-nav__item--cta a {
-    color: white;
+    color: #fff;
     background: #ff1b68;
     padding: 8px 16px;
     border-radius: 8px;
@@ -77,7 +97,7 @@ body {
 .main-nav__item--cta a:hover,
 .main-nav__item--cta a:active {
     color: #ff1b68;
-    background: white;
+    background: #fff;
     border: none;
 }
 
@@ -100,7 +120,7 @@ body {
 }
 
 .main-footer__link a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -111,19 +131,20 @@ body {
 
 .button {
     background: #0e4f1f;
-    color: white;
+    color: #fff;
     font: inherit;
-    border: 1.5px solid #0e4f1f;
+    border: none;
     padding: 8px;
     border-radius: 8px;
     font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.5s ease;
 }
 
 .button:hover,
 .button:active {
-    background: white;
+    background: #fff;
     color: #0e4f1f;
 }
 
