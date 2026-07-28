@@ -1,0 +1,107 @@
+main {
+    padding-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header {
+    background-color:#fff;
+    text-align: center;
+}
+
+.header-title {
+    color: #19b84c;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 48px;
+}
+
+.header-description {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.package {
+    width: 85%;
+    margin: 0;
+    border-right: 4px solid #0e4f1f;
+    border-radius: 0 12px 12px 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+}
+
+.package:hover,
+.package:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
+    border-right-color: #ff5454;
+}
+
+.package a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 2rem;
+}
+
+.package__title {
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.package__subtitle {
+    color: #979797;
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.package__info {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0e4f1f;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0e4f1f;
+    background: #ffffff;
+}
+
+#plus {
+    background: rgba(213, 255, 220, 0.95);
+    align-self: flex-end;
+    border-right: none;
+    border-left: 4px solid #0e4f1f;
+    border-radius: 12px 0 0 12px;
+    text-align: right;
+}
+
+#free {
+    background: rgba(234, 252, 237, 0.95);
+    align-self: flex-start;
+    border-left: none;
+    border-right: 4px solid #0e4f1f;
+    border-radius: 0 12px 12px 0;
+    text-align: left;
+}
+
+#free:hover,
+#free:active {
+    border-right-color: #ff5454;
+}
+
+#premium {
+    background: rgba(14, 79, 31, 0.95);
+    align-self: flex-start;
+}
+
+#premium .package__title {
+    color: #ffffff;
+}
+
+#premium .package__subtitle {
+    color: #bbb;
+}

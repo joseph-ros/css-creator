@@ -71,7 +71,6 @@ body {
     color: #0e4f1f;
     font-weight: bold;
     padding: 3px 0;
-    transition: all 0.5s ease;
 }
 
 .main-nav__item a:hover,
@@ -114,7 +113,7 @@ body {
 
 .plan:hover {
     transform: translateY(-10px);
-    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.20);
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.30);
 }
 
 .plan--highlighted {
