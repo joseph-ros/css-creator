@@ -1,0 +1,146 @@
+main {
+    padding-top: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.signup-title {
+    text-align: center;
+    font-size: 48px;
+    color: #19b84c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-block-start: 5rem;
+    margin-bottom: 4rem;
+    text-shadow: 0 0 12px rgba(45, 223, 92, 0.4);
+}
+
+.signup-form {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: none;
+    margin: 0 1.5rem;
+    width: auto;
+}
+
+.signup-form label {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    opacity: 0.85;
+}
+
+.signup-form label,
+.signup-form input,
+.signup-form select {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.signup-form input[id*="terms"],
+.signup-form input[id*="terms"] + label {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.signup-form input:not([type="checkbox"]),
+.signup-form select {
+    border: none;
+    padding: 0.6rem 0.8rem;
+    font: inherit;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.05);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+    outline: none;
+    background: #d8f3df;
+    border: 1px solid #2ddf5c;
+    box-shadow: 0 0 15px rgba(45, 223, 92, 0.35);
+}
+
+.signup-form input[type="checkbox"] {
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.signup-form input[type="checkbox"]:checked {
+    background: #2ddf5c;
+    border: 1px solid #0e4f1f;
+    box-shadow: 0 0 10px rgba(45, 223, 92, 0.4);
+}
+
+.signup-form input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid #0e4f1f;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.signup-form input.invalid,
+.signup-form select.invalid,
+.signup-form input:not(:placeholder-shown):invalid,
+.signup-form select:not(:placeholder-shown):invalid,
+.signup-form input:user-invalid,
+.signup-form select:user-invalid {
+    border: 1px solid #f00 !important;
+    background: transparent !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+}
+
+.signup-form button[type="submit"],
+.button {
+    display: block;
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    color: #0e4f1f;
+    background: #2ddf5c;
+    box-shadow: 0 0 20px rgba(45, 223, 92, 0.5);
+    transform: translateY(-1px);
+}
+
+@media (min-width: 48rem) {
+    .signup-form {
+        margin: 0 5rem;
+    }
+}
+
+@media (min-width: 80rem) {
+    .signup-form {
+        margin: 0 10rem;
+    }
+}

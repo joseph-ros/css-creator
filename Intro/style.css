@@ -17,6 +17,9 @@ body {
 
 .section-title {
     color: #2ddf5c;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 #product-overview h1 {
@@ -108,12 +111,12 @@ body {
     width: 30%;
     vertical-align: middle;
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .plan:hover {
-    transform: translateY(-10px);
-    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.30);
+    transform: translateY(-1.5rem);
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.40);
 }
 
 .plan--highlighted {
@@ -126,6 +129,8 @@ body {
     color: #19b84c;
     padding: 8px;
     border-radius: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .plan__title {
@@ -158,6 +163,7 @@ body {
     background: #19b84c;
     margin-top: 80px;
     padding: 16px;
+    margin-bottom: -50px;
 }
 
 #key-features .section-title {
@@ -179,14 +185,12 @@ body {
 }
 
 .key-feature__image {
-    background: #ffcede;
+    color: #fff;
     width: 128px;
     height: 128px;
-    border: 2px solid #424242;
-    border-radius: 50%;
     margin: auto;
-    padding-top: 22px;
-    font-size: 64px;
+    padding-top: 1.5rem;
+    font-size: 4rem;
 }
 
 .key-feature__description {

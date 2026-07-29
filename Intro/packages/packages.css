@@ -63,6 +63,11 @@ main {
     text-align: right;
 }
 
+#plus:hover,
+#plus:active {
+    border-left-color: #ff5454;
+}
+
 #free {
     background: rgba(234, 252, 237, 0.95);
     align-self: flex-start;
@@ -80,6 +85,13 @@ main {
 #premium {
     background: rgba(14, 79, 31, 0.95);
     align-self: flex-start;
+    border-left: none;
+    border-right: 4px solid rgba(213, 255, 220, 0.95);
+}
+
+#premium:hover,
+#premium:active {
+    border-right-color: #ff5454;
 }
 
 #premium .package__title {

@@ -29,7 +29,8 @@
   gap: 2.5rem;
   padding: 2rem;
   overflow: hidden;
-  width: 80%;
+  width: 85%;
+  height: 25rem;
   margin-bottom: 4rem;
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
@@ -54,8 +55,8 @@
 }
 
 .testimonial__image {
-  width: 100%;
-  height: 100%;
+  width: 37rem;
+  height: 21rem;
   object-fit: cover;
   display: block;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -103,6 +104,7 @@
 .testimonial__text {
   margin-top: 0.5rem;
   color: var(--text-main);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   line-height: 1.6;
 }
