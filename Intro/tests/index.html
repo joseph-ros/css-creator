@@ -8,18 +8,41 @@
     <link rel="stylesheet" href="scrollbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            boxShadow: {
+              soft: '0 25px 50px -12px rgba(15, 23, 42, 0.35)',
+            },
+            colors: {
+              brand: {
+                  100: '#dbeafe',
+                  200: '#bfdbfe',
+                  300: '#93c5fd',
+                  400: '#60a5fa',
+                  500: '#2563eb',
+                  600: '#1d4ed8',
+                  700: '#1e40af',
+                  800: '#1e3a8a',
+                  900: '#1e3a8a',
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-      <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+  <body class="antialiased bg-slate-50 text-slate-900">
+    <header class="sticky top-0 z-50 border-b shadow-sm bg-white/95 backdrop-blur border-slate-200">
+      <div class="px-4 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-center justify-between gap-4 py-4">
           <div class="flex items-center gap-3">
-            <button id="mobileMenuButton" class="lg:hidden inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 hover:bg-slate-100 transition" aria-label="Open menu">
+            <button id="mobileMenuButton" class="inline-flex items-center justify-center p-2 transition border rounded-full lg:hidden border-slate-200 text-slate-700 hover:bg-slate-100" aria-label="Open menu">
               <i class="fa-solid fa-bars h-5 w-5 pt-[2px]"></i>
             </button>
             <a href="#home" class="flex items-center gap-3">
-              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white font-bold shadow-soft">
+              <div class="flex items-center justify-center font-bold text-white h-11 w-11 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-soft">
                 <i class="fa-solid fa-shopping-cart"></i>
               </div>
               <div>
@@ -30,45 +53,45 @@
           </div>
 
           <div class="hidden lg:flex lg:items-center lg:gap-4">
-            <div class="group relative">
-              <button class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-500 hover:text-blue-600" aria-haspopup="true" aria-expanded="false"><span>Categories</span><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="relative group">
+              <button class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition bg-white border rounded-full border-slate-200 text-slate-700 hover:border-blue-500 hover:text-blue-600" aria-haspopup="true" aria-expanded="false"><span>Categories</span><i class="fa-solid fa-chevron-down"></i></button>
               <div class="invisible absolute left-0 top-full pt-3 w-[26rem] opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2">
                 <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-xl">
                   <div class="grid gap-4 sm:grid-cols-2">
-                    <a href="#categories" class="flex items-start gap-3 h-40 rounded-3xl border border-slate-200 p-4 transition hover:border-blue-500 hover:bg-blue-50">
-                      <div class="inline-flex h-24 w-24 items-center justify-center text-blue-500">
-                        <i class="fa-solid fa-thumbs-up text-2xl pt-5"></i>
+                    <a href="#categories" class="flex items-start h-40 gap-3 p-4 transition border rounded-3xl border-slate-200 hover:border-blue-500 hover:bg-blue-50">
+                      <div class="inline-flex items-center justify-center w-24 h-24 text-blue-500">
+                        <i class="pt-5 text-2xl fa-solid fa-thumbs-up"></i>
                       </div>
                       <div>
-                        <p class="font-semibold pt-5">Top Picks</p>
-                        <p class="text-sm text-slate-500 pt-4">Trending Vendor Collections</p>
+                        <p class="pt-5 font-semibold">Top Picks</p>
+                        <p class="pt-4 text-sm text-slate-500">Trending Vendor Collections</p>
                       </div>
                     </a>
-                    <a href="#vendors" class="flex items-start gap-3 h-40 rounded-3xl border border-slate-200 p-4 transition hover:border-cyan-500 hover:bg-cyan-50">
-                      <div class="inline-flex h-24 w-24 items-center justify-center text-cyan-500">
-                        <i class="fa-solid fa-store text-2xl pt-5"></i>
+                    <a href="#vendors" class="flex items-start h-40 gap-3 p-4 transition border rounded-3xl border-slate-200 hover:border-cyan-500 hover:bg-cyan-50">
+                      <div class="inline-flex items-center justify-center w-24 h-24 text-cyan-500">
+                        <i class="pt-5 text-2xl fa-solid fa-store"></i>
                       </div>
                       <div>
-                        <p class="font-semibold pt-5">By Store</p>
-                        <p class="text-sm text-slate-500 pt-4">Verified Seller Collections</p>
+                        <p class="pt-5 font-semibold">By Store</p>
+                        <p class="pt-4 text-sm text-slate-500">Verified Seller Collections</p>
                       </div>
                     </a>
-                    <a href="#trending" class="flex items-start gap-3 h-40 rounded-3xl border border-slate-200 p-4 transition hover:border-indigo-500 hover:bg-indigo-50">
-                      <div class="inline-flex h-24 w-24 items-center justify-center text-indigo-500">
-                        <i class="fa-solid fa-arrow-trend-up text-2xl pt-5"></i>
+                    <a href="#trending" class="flex items-start h-40 gap-3 p-4 transition border rounded-3xl border-slate-200 hover:border-indigo-500 hover:bg-indigo-50">
+                      <div class="inline-flex items-center justify-center w-24 h-24 text-indigo-500">
+                        <i class="pt-5 text-2xl fa-solid fa-arrow-trend-up"></i>
                       </div>
                       <div>
-                        <p class="font-semibold pt-2">Trending Products</p>
-                        <p class="text-sm text-slate-500 pt-1">Top Fast-selling Item Categories</p>
+                        <p class="pt-2 font-semibold">Trending Products</p>
+                        <p class="pt-1 text-sm text-slate-500">Top Fast-selling Item Categories</p>
                       </div>
                     </a>
-                    <a href="#deals" class="flex items-start gap-3 h-40 rounded-3xl border border-slate-200 p-4 transition hover:border-emerald-500 hover:bg-emerald-50">
-                      <div class="inline-flex h-24 w-24 items-center justify-center text-emerald-500">
-                        <i class="fa-solid fa-tags text-2xl pt-5"></i>
+                    <a href="#deals" class="flex items-start h-40 gap-3 p-4 transition border rounded-3xl border-slate-200 hover:border-emerald-500 hover:bg-emerald-50">
+                      <div class="inline-flex items-center justify-center w-24 h-24 text-emerald-500">
+                        <i class="pt-5 text-2xl fa-solid fa-tags"></i>
                       </div>
                       <div>
-                        <p class="font-semibold pt-2">Daily Deals</p>
-                        <p class="text-sm text-slate-500 pt-1">Exclusive Limited-time offers</p>
+                        <p class="pt-2 font-semibold">Daily Deals</p>
+                        <p class="pt-1 text-sm text-slate-500">Exclusive Limited-time offers</p>
                       </div>
                     </a>
                   </div>
@@ -76,49 +99,49 @@
               </div>
             </div>
             <nav class="items-center gap-2 text-sm font-medium text-slate-600 lg:flex">
-              <a href="#home" class="rounded-full px-3 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Home</a>
-              <a href="#vendors" class="rounded-full px-3 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Vendors</a>
-              <a href="#trending" class="rounded-full px-3 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Products</a>
-              <a href="#deals" class="rounded-full px-3 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Deals</a>
-              <a href="#contact" class="rounded-full px-3 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Contact</a>
+              <a href="#home" class="px-3 py-2 transition rounded-full hover:bg-blue-100 hover:text-blue-600">Home</a>
+              <a href="#vendors" class="px-3 py-2 transition rounded-full hover:bg-blue-100 hover:text-blue-600">Vendors</a>
+              <a href="#trending" class="px-3 py-2 transition rounded-full hover:bg-blue-100 hover:text-blue-600">Products</a>
+              <a href="#deals" class="px-3 py-2 transition rounded-full hover:bg-blue-100 hover:text-blue-600">Deals</a>
+              <a href="#contact" class="px-3 py-2 transition rounded-full hover:bg-blue-100 hover:text-blue-600">Contact</a>
             </nav>
           </div>
 
-          <div class="flex flex-1 items-center justify-end gap-3">
-            <form class="hidden md:flex flex-1 max-w-xl items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 shadow-sm">
-              <input type="search" placeholder="Search products, stores..." class="w-full bg-transparent text-sm text-slate-700 focus:outline-none" aria-label="Search marketplace" />
-              <button type="submit" class="ml-3 text-slate-500 hover:text-blue-600 transition" aria-label="Search">
+          <div class="flex items-center justify-end flex-1 gap-3">
+            <form class="items-center flex-1 hidden max-w-xl px-4 py-2 border rounded-full shadow-sm md:flex border-slate-200 bg-slate-50">
+              <input type="search" placeholder="Search products, stores..." class="w-full text-sm bg-transparent text-slate-700 focus:outline-none" aria-label="Search marketplace" />
+              <button type="submit" class="ml-3 transition text-slate-500 hover:text-blue-600" aria-label="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
-            <div class="hidden md:flex items-center gap-2">
-              <button class="p-2 text-slate-600 hover:text-blue-600 transition" aria-label="Wishlist">
+            <div class="items-center hidden gap-2 md:flex">
+              <button class="p-2 transition text-slate-600 hover:text-blue-600" aria-label="Wishlist">
                 <i class="fa-solid fa-heart"></i>
               </button>
-              <button class="p-2 text-slate-600 hover:text-blue-600 transition" aria-label="Profile">
+              <button class="p-2 transition text-slate-600 hover:text-blue-600" aria-label="Profile">
                 <i class="fa-solid fa-circle-user"></i>
               </button>
             </div>
-            <button id="cartButton" class="relative inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-3 text-slate-700 hover:border-blue-500 hover:text-blue-600 transition" aria-label="Open cart">
+            <button id="cartButton" class="relative inline-flex items-center justify-center p-3 transition bg-white border rounded-full border-slate-200 text-slate-700 hover:border-blue-500 hover:text-blue-600" aria-label="Open cart">
               <i class="fa-solid fa-cart-shopping"></i>
               <span id="cartCount" class="absolute -right-1 -top-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-blue-600 px-1.5 text-[10px] font-semibold text-white">0</span>
             </button>
           </div>
         </div>
-        <div id="mobileNav" class="lg:hidden overflow-hidden max-h-0 transition-all duration-300">
-          <div class="space-y-3 border-t border-slate-200 py-4">
-            <form class="flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2">
-              <input type="search" placeholder="Search products, stores..." class="w-full bg-transparent text-sm text-slate-700 focus:outline-none" aria-label="Search" />
+        <div id="mobileNav" class="overflow-hidden transition-all duration-300 lg:hidden max-h-0">
+          <div class="py-4 space-y-3 border-t border-slate-200">
+            <form class="flex items-center gap-2 px-3 py-2 border rounded-full border-slate-200 bg-slate-50">
+              <input type="search" placeholder="Search products, stores..." class="w-full text-sm bg-transparent text-slate-700 focus:outline-none" aria-label="Search" />
               <button type="submit" class="text-slate-500" aria-label="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
             <div class="grid gap-3">
-              <a href="#home" class="rounded-3xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 hover:text-blue-600 transition">Home</a>
-              <a href="#vendors" class="rounded-3xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 hover:text-blue-600 transition">Vendors</a>
-              <a href="#trending" class="rounded-3xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 hover:text-blue-600 transition">Products</a>
-              <a href="#deals" class="rounded-3xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 hover:text-blue-600 transition">Deals</a>
-              <a href="#contact" class="rounded-3xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 hover:text-blue-600 transition">Contact</a>
+              <a href="#home" class="px-4 py-3 text-sm font-medium transition rounded-3xl bg-slate-50 text-slate-700 hover:text-blue-600">Home</a>
+              <a href="#vendors" class="px-4 py-3 text-sm font-medium transition rounded-3xl bg-slate-50 text-slate-700 hover:text-blue-600">Vendors</a>
+              <a href="#trending" class="px-4 py-3 text-sm font-medium transition rounded-3xl bg-slate-50 text-slate-700 hover:text-blue-600">Products</a>
+              <a href="#deals" class="px-4 py-3 text-sm font-medium transition rounded-3xl bg-slate-50 text-slate-700 hover:text-blue-600">Deals</a>
+              <a href="#contact" class="px-4 py-3 text-sm font-medium transition rounded-3xl bg-slate-50 text-slate-700 hover:text-blue-600">Contact</a>
             </div>
           </div>
         </div>
@@ -126,68 +149,68 @@
     </header>
 
     <main id="home">
-      <section class="relative overflow-hidden bg-slate-950 text-white">
+      <section class="relative overflow-hidden text-white bg-slate-950">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.35),_transparent_45%),linear-gradient(180deg,rgba(15,23,42,0.9),rgba(15,23,42,0.2))]"></div>
-        <div class="mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8 relative">
+        <div class="relative px-4 py-20 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
           <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div class="space-y-6">
               <span class="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-slate-200">Premium marketplace</span>
               <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">A modern multi-vendor marketplace built for growth.</h1>
               <p class="max-w-xl text-base text-slate-200/85 sm:text-lg">Discover trusted stores, unique products, and exclusive deals with a polished shopping experience across every device.</p>
               <div class="flex flex-wrap gap-4">
-                <a href="#trending" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-1">Shop Trending</a>
-                <a href="#vendors" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/20 hover:-translate-y-1">Browse Vendors</a>
+                <a href="#trending" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white transition rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500 shadow-blue-500/20 hover:-translate-y-1">Shop Trending</a>
+                <a href="#vendors" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white transition border rounded-full border-white/20 bg-white/10 hover:bg-white/20 hover:-translate-y-1">Browse Vendors</a>
               </div>
               <div class="grid gap-3 sm:grid-cols-3">
-                <span class="rounded-3xl bg-white/10 px-4 py-3 text-sm text-slate-200 transition hover:bg-white/20">Free shipping over $75</span>
-                <span class="rounded-3xl bg-white/10 px-4 py-3 text-sm text-slate-200 transition hover:bg-white/20">Verified sellers</span>
-                <span class="rounded-3xl bg-white/10 px-4 py-3 text-sm text-slate-200 transition hover:bg-white/20">24/7 support</span>
+                <span class="px-4 py-3 text-sm transition rounded-3xl bg-white/10 text-slate-200 hover:bg-white/20">Free shipping over $75</span>
+                <span class="px-4 py-3 text-sm transition rounded-3xl bg-white/10 text-slate-200 hover:bg-white/20">Verified sellers</span>
+                <span class="px-4 py-3 text-sm transition rounded-3xl bg-white/10 text-slate-200 hover:bg-white/20">24/7 support</span>
               </div>
             </div>
             <div class="relative">
               <div id="heroSlides" class="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-slate-950/40">
-                <div class="slide-fade absolute inset-0 carousel-visible bg-cover bg-center" data-slide="0" style="background-image:url('./test-images/slideshow-1.jpg');">
+                <div class="absolute inset-0 bg-center bg-cover slide-fade carousel-visible" data-slide="0" style="background-image:url('./test-images/slideshow-1.jpg');">
                   <div class="absolute inset-0 bg-slate-950/50"></div>
                   <div class="absolute inset-0 flex flex-col justify-center gap-4 px-6 py-8 sm:px-10">
                     <span class="inline-flex rounded-full bg-white/10 px-3 py-2 text-xs uppercase tracking-[0.3em] text-slate-200">New arrival showcase</span>
                     <h2 class="max-w-lg text-3xl font-semibold text-white sm:text-4xl">Shop bestselling lifestyle products from top vendors.</h2>
                     <p class="max-w-md text-sm text-slate-200/90 sm:text-base">Fast checkout, verified sellers, and curated collections all in one premium marketplace.</p>
                     <div class="flex flex-wrap gap-3">
-                      <a href="#categories" class="inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Explore categories</a>
-                      <a href="#deals" class="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20">See deals</a>
+                      <a href="#categories" class="inline-flex items-center px-5 py-3 text-sm font-semibold transition bg-white rounded-full text-slate-900 hover:bg-slate-100">Explore categories</a>
+                      <a href="#deals" class="inline-flex items-center px-5 py-3 text-sm font-semibold text-white transition border rounded-full border-white/25 bg-white/10 hover:bg-white/20">See deals</a>
                     </div>
                   </div>
                 </div>
-                <div class="slide-fade absolute inset-0 carousel-hidden bg-cover bg-center" data-slide="1" style="background-image:url('./test-images/slideshow-2.jpg');">
+                <div class="absolute inset-0 bg-center bg-cover slide-fade carousel-hidden" data-slide="1" style="background-image:url('./test-images/slideshow-2.jpg');">
                   <div class="absolute inset-0 bg-slate-950/55"></div>
                   <div class="absolute inset-0 flex flex-col justify-center gap-4 px-6 py-8 sm:px-10">
                     <span class="inline-flex rounded-full bg-white/10 px-3 py-2 text-xs uppercase tracking-[0.3em] text-slate-200">Verified sellers</span>
                     <h2 class="max-w-lg text-3xl font-semibold text-white sm:text-4xl">Discover unique products from premium storefronts.</h2>
                     <p class="max-w-md text-sm text-slate-200/90 sm:text-base">Save on quality items with top ratings, fast delivery, and trusted customer service.</p>
                     <div class="flex flex-wrap gap-3">
-                      <a href="#trending" class="inline-flex items-center rounded-full bg-cyan-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600">Shop trending</a>
-                      <a href="#vendors" class="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20">Visit vendors</a>
+                      <a href="#trending" class="inline-flex items-center px-5 py-3 text-sm font-semibold text-white transition rounded-full bg-cyan-500 hover:bg-cyan-600">Shop trending</a>
+                      <a href="#vendors" class="inline-flex items-center px-5 py-3 text-sm font-semibold text-white transition border rounded-full border-white/25 bg-white/10 hover:bg-white/20">Visit vendors</a>
                     </div>
                   </div>
                 </div>
-                <div class="slide-fade absolute inset-0 carousel-hidden bg-cover bg-center" data-slide="2" style="background-image:url('./test-images/slideshow-3.jpg');">
+                <div class="absolute inset-0 bg-center bg-cover slide-fade carousel-hidden" data-slide="2" style="background-image:url('./test-images/slideshow-3.jpg');">
                   <div class="absolute inset-0 bg-slate-950/55"></div>
                   <div class="absolute inset-0 flex flex-col justify-center gap-4 px-6 py-8 sm:px-10">
                     <span class="inline-flex rounded-full bg-white/10 px-3 py-2 text-xs uppercase tracking-[0.3em] text-slate-200">Smart offers</span>
                     <h2 class="max-w-lg text-3xl font-semibold text-white sm:text-4xl">Shop deals curated for every category and budget.</h2>
                     <p class="max-w-md text-sm text-slate-200/90 sm:text-base">Enjoy a premium shopping experience with clean design and fast navigation.</p>
                     <div class="flex flex-wrap gap-3">
-                      <a href="#deals" class="inline-flex items-center rounded-full bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-600">View offers</a>
-                      <a href="#categories" class="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20">Browse categories</a>
+                      <a href="#deals" class="inline-flex items-center px-5 py-3 text-sm font-semibold text-white transition bg-blue-500 rounded-full hover:bg-blue-600">View offers</a>
+                      <a href="#categories" class="inline-flex items-center px-5 py-3 text-sm font-semibold text-white transition border rounded-full border-white/25 bg-white/10 hover:bg-white/20">Browse categories</a>
                     </div>
                   </div>
                 </div>
-                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div class="absolute flex flex-col gap-4 bottom-6 left-6 right-6 sm:flex-row sm:items-center sm:justify-between">
                   <div class="flex items-center gap-3">
-                    <button id="prevSlide" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow hover:bg-white transition" aria-label="Previous slide">
+                    <button id="prevSlide" class="inline-flex items-center justify-center transition rounded-full shadow h-11 w-11 bg-white/90 text-slate-700 hover:bg-white" aria-label="Previous slide">
                       <i class="fa-solid fa-chevron-left h-5 w-5 pt-[2px]"></i>
                     </button>
-                    <button id="nextSlide" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow hover:bg-white transition" aria-label="Next slide">
+                    <button id="nextSlide" class="inline-flex items-center justify-center transition rounded-full shadow h-11 w-11 bg-white/90 text-slate-700 hover:bg-white" aria-label="Next slide">
                       <i class="fa-solid fa-chevron-right h-5 w-5 pt-[2px]"></i>
                     </button>
                   </div>
@@ -203,7 +226,7 @@
         </div>
       </section>
 
-      <section id="categories" class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <section id="categories" class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p class="text-sm uppercase tracking-[0.3em] text-blue-600">Featured categories</p>
@@ -211,44 +234,44 @@
           </div>
           <p class="max-w-xl text-sm text-slate-500">Everything you need from fashion and home goods to electronics and beauty essentials.</p>
         </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-6 mt-10 md:grid-cols-2 xl:grid-cols-3">
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50 hover:border-blue-300">
-            <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-blue-100 text-blue-600 transition group-hover:bg-blue-500 group-hover:text-white">
+            <div class="flex items-center justify-center w-16 h-16 text-blue-600 transition bg-blue-100 rounded-3xl group-hover:bg-blue-500 group-hover:text-white">
               <i class="fa-solid fa-shirt"></i>
             </div>
             <h3 class="mt-6 text-xl font-semibold text-slate-900">Fashion & Accessories</h3>
             <p class="mt-3 text-sm leading-6 text-slate-500">Curated apparel and elegant accessories from trusted sellers.</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-cyan-500/50 hover:border-cyan-300">
-            <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-cyan-100 text-cyan-600 transition group-hover:bg-cyan-500 group-hover:text-white">
+            <div class="flex items-center justify-center w-16 h-16 transition rounded-3xl bg-cyan-100 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white">
               <i class="fa-solid fa-house"></i>
             </div>
             <h3 class="mt-6 text-xl font-semibold text-slate-900">Home & Living</h3>
             <p class="mt-3 text-sm leading-6 text-slate-500">Premium decor, kitchen essentials, and lifestyle solutions.</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-emerald-500/50 hover:border-emerald-300">
-            <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-emerald-100 text-emerald-600 transition group-hover:bg-emerald-500 group-hover:text-white">
+            <div class="flex items-center justify-center w-16 h-16 transition rounded-3xl bg-emerald-100 text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white">
               <i class="fa-solid fa-mobile"></i>
             </div>
             <h3 class="mt-6 text-xl font-semibold text-slate-900">Electronics</h3>
             <p class="mt-3 text-sm leading-6 text-slate-500">Gadgets, accessories, and smart gear from expert stores.</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-purple-500/50 hover:border-purple-300">
-            <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-purple-100 text-purple-600 transition group-hover:bg-purple-500 group-hover:text-white">
+            <div class="flex items-center justify-center w-16 h-16 text-purple-600 transition bg-purple-100 rounded-3xl group-hover:bg-purple-500 group-hover:text-white">
               <i class="fa-solid fa-spa"></i>
             </div>
             <h3 class="mt-6 text-xl font-semibold text-slate-900">Beauty & Wellness</h3>
             <p class="mt-3 text-sm leading-6 text-slate-500">Self-care essentials and beauty picks from trusted brands.</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-orange-500/50 hover:border-orange-300">
-            <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-orange-100 text-orange-600 transition group-hover:bg-orange-500 group-hover:text-white">
+            <div class="flex items-center justify-center w-16 h-16 text-orange-600 transition bg-orange-100 rounded-3xl group-hover:bg-orange-500 group-hover:text-white">
               <i class="fas fa-futbol"></i>
             </div>
             <h3 class="mt-6 text-xl font-semibold text-slate-900">Sports & Outdoors</h3>
             <p class="mt-3 text-sm leading-6 text-slate-500">Gear for active lifestyles, travel, and outdoor adventures.</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-pink-500/50 hover:border-pink-300">
-            <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-pink-100 text-pink-600 transition group-hover:bg-pink-500 group-hover:text-white">
+            <div class="flex items-center justify-center w-16 h-16 text-pink-600 transition bg-pink-100 rounded-3xl group-hover:bg-pink-500 group-hover:text-white">
               <i class="fa-solid fa-gifts"></i>
             </div>
             <h3 class="mt-6 text-xl font-semibold text-slate-900">Gifts & Stationery</h3>
@@ -257,7 +280,7 @@
         </div>
       </section>
 
-      <section id="vendors" class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <section id="vendors" class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p class="text-sm uppercase tracking-[0.3em] text-blue-600">Featured vendors</p>
@@ -265,107 +288,107 @@
           </div>
           <p class="max-w-xl text-sm text-slate-500">Browse trusted storefronts with high ratings and exclusive product offerings.</p>
         </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-6 mt-10 md:grid-cols-2 xl:grid-cols-3">
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50  hover:border-blue-300">
             <div class="flex items-center gap-4">
-              <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-blue-100 text-blue-700">
-                <i class="fa-solid fa-couch text-2xl"></i>
+              <div class="flex items-center justify-center w-16 h-16 text-blue-700 bg-blue-100 rounded-3xl">
+                <i class="text-2xl fa-solid fa-couch"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">Aster Studios</h3>
                 <p class="text-sm text-slate-500">Home décor expert</p>
               </div>
             </div>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-3 mt-6 text-sm text-slate-500">
               <span class="inline-flex items-center gap-1">⭐ 4.9</span>
               <span>• 128 products</span>
             </div>
-            <button class="mt-6 inline-flex items-center justify-center rounded-full bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-600">Visit Store</button>
+            <button class="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-white transition bg-blue-500 rounded-full hover:bg-blue-600">Visit Store</button>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-cyan-500/50  hover:border-cyan-300">
             <div class="flex items-center gap-4">
-              <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-cyan-100 text-cyan-700">
-                  <i class="fa-solid fa-spa text-2xl"></i>
+              <div class="flex items-center justify-center w-16 h-16 rounded-3xl bg-cyan-100 text-cyan-700">
+                  <i class="text-2xl fa-solid fa-spa"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">BloomTech</h3>
                 <p class="text-sm text-slate-500">Electronics boutique</p>
               </div>
             </div>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-3 mt-6 text-sm text-slate-500">
               <span class="inline-flex items-center gap-1">⭐ 4.8</span>
               <span>• 210 products</span>
             </div>
-            <button class="mt-6 inline-flex items-center justify-center rounded-full bg-cyan-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600">Visit Store</button>
+            <button class="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-white transition rounded-full bg-cyan-500 hover:bg-cyan-600">Visit Store</button>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-emerald-500/50  hover:border-emerald-300">
             <div class="flex items-center gap-4">
-              <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-emerald-100 text-emerald-700">
-                <i class="fa-solid fa-palette text-2xl"></i>
+              <div class="flex items-center justify-center w-16 h-16 rounded-3xl bg-emerald-100 text-emerald-700">
+                <i class="text-2xl fa-solid fa-palette"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">Craft Collective</h3>
                 <p class="text-sm text-slate-500">Handmade goods</p>
               </div>
             </div>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-3 mt-6 text-sm text-slate-500">
               <span class="inline-flex items-center gap-1">⭐ 4.9</span>
               <span>• 84 products</span>
             </div>
-            <button class="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600">Visit Store</button>
+            <button class="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-white transition rounded-full bg-emerald-500 hover:bg-emerald-600">Visit Store</button>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-indigo-500/50  hover:border-indigo-300">
             <div class="flex items-center gap-4">
-              <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-indigo-100 text-indigo-700">
-                <i class="fa-brands fa-apple text-2xl"></i>
+              <div class="flex items-center justify-center w-16 h-16 text-indigo-700 bg-indigo-100 rounded-3xl">
+                <i class="text-2xl fa-brands fa-apple"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">Apple Inc.</h3>
                 <p class="text-sm text-slate-500">Electronics retailer</p>
               </div>
             </div>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-3 mt-6 text-sm text-slate-500">
               <span class="inline-flex items-center gap-1">⭐ 4.9</span>
               <span>• 84 products</span>
             </div>
-            <button class="mt-6 inline-flex items-center justify-center rounded-full bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700">Visit Store</button>
+            <button class="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-white transition bg-indigo-500 rounded-full hover:bg-indigo-700">Visit Store</button>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-sky-500/50 hover:border-sky-300">
             <div class="flex items-center gap-4">
-              <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-sky-100 text-sky-700">
-                <i class="fa-solid fa-headphones text-2xl"></i>
+              <div class="flex items-center justify-center w-16 h-16 rounded-3xl bg-sky-100 text-sky-700">
+                <i class="text-2xl fa-solid fa-headphones"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">SoundPulse</h3>
                 <p class="text-sm text-slate-500">Audio equipment goods</p>
               </div>
             </div>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-3 mt-6 text-sm text-slate-500">
               <span class="inline-flex items-center gap-1">⭐ 4.9</span>
               <span>• 84 products</span>
             </div>
-            <button class="mt-6 inline-flex items-center justify-center rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-600">Visit Store</button>
+            <button class="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-white transition rounded-full bg-sky-500 hover:bg-sky-600">Visit Store</button>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:shadow-amber-500/50 hover:border-amber-300">
             <div class="flex items-center gap-4">
-              <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-amber-100 text-amber-700">
-                <i class="fa-solid fa-shield text-2xl"></i>
+              <div class="flex items-center justify-center w-16 h-16 rounded-3xl bg-amber-100 text-amber-700">
+                <i class="text-2xl fa-solid fa-shield"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">ArmorZone</h3>
                 <p class="text-sm text-slate-500">Bulletproof Products</p>
               </div>
             </div>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-3 mt-6 text-sm text-slate-500">
               <span class="inline-flex items-center gap-1">⭐ 4.9</span>
               <span>• 84 products</span>
             </div>
-            <button class="mt-6 inline-flex items-center justify-center rounded-full bg-amber-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-600">Visit Store</button>
+            <button class="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-white transition rounded-full bg-amber-500 hover:bg-amber-600">Visit Store</button>
           </article>
         </div>
       </section>
 
-      <section id="trending" class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <section id="trending" class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p class="text-sm uppercase tracking-[0.3em] text-blue-600">Trending products</p>
@@ -373,13 +396,13 @@
           </div>
           <p class="max-w-xl text-sm text-slate-500">Add premium picks to your cart and compare deals across categories.</p>
         </div>
-        <div id="trendingProducts" class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div id="trendingProducts" class="grid gap-6 mt-10 md:grid-cols-2 xl:grid-cols-3">
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-1.jpg" alt="Wireless Noise-Canceling Headphones" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">15% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-1.jpg" alt="Wireless Noise-Canceling Headphones" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">15% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Wireless Noise-Canceling Headphones</h3>
                   <p class="text-sm text-slate-500">SoundPulse</p>
@@ -388,15 +411,15 @@
                   <span>⭐ 4.8</span>
                   <span class="text-lg font-semibold text-slate-900">$149.99</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-2.jpg" alt="Handcrafted Ceramic Vase" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">10% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-2.jpg" alt="Handcrafted Ceramic Vase" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">10% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Handcrafted Ceramic Vase</h3>
                   <p class="text-sm text-slate-500">Craft Collective</p>
@@ -405,15 +428,15 @@
                   <span>⭐ 4.9</span>
                   <span class="text-lg font-semibold text-slate-900">$ 42.00</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-3.jpg" alt="Designer Travel Backpack" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">20% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-3.jpg" alt="Designer Travel Backpack" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">20% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Designer Travel Backpack</h3>
                   <p class="text-sm text-slate-500">Aster Studios</p>
@@ -422,15 +445,15 @@
                   <span>⭐ 4.7</span>
                   <span class="text-lg font-semibold text-slate-900">$ 89.00</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-4.jpg" alt="Luxury Scented Candle Set" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">25% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-4.jpg" alt="Luxury Scented Candle Set" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">25% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Luxury Scented Candle Set</h3>
                   <p class="text-sm text-slate-500">Craft Collective</p>
@@ -439,15 +462,15 @@
                   <span>⭐ 4.9</span>
                   <span class="text-lg font-semibold text-slate-900">$ 34.50</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-5.jpg" alt="Smart Home Speaker" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">12% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-5.jpg" alt="Smart Home Speaker" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">12% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Smart Home Speaker</h3>
                   <p class="text-sm text-slate-500">SoundPulse</p>
@@ -456,15 +479,15 @@
                   <span>⭐ 4.6</span>
                   <span class="text-lg font-semibold text-slate-900">$ 79.99</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-6.jpg" alt="Premium Leather Wallet" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">18% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-6.jpg" alt="Premium Leather Wallet" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">18% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Premium Leather Wallet</h3>
                   <p class="text-sm text-slate-500">Aster Studios</p>
@@ -473,15 +496,15 @@
                   <span>⭐ 4.8</span>
                   <span class="text-lg font-semibold text-slate-900">$ 56.00</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-7.jpg" alt="iSmart Bed System" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">10% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-7.jpg" alt="iSmart Bed System" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">10% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">iSmart Bed System</h3>
                   <p class="text-sm text-slate-500">BloomTech</p>
@@ -490,15 +513,15 @@
                   <span>⭐ 4.9</span>
                   <span class="text-lg font-semibold text-slate-900">$ 3500.50</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-8.jpg" alt="Full Body Massage Chair" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">20% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-8.jpg" alt="Full Body Massage Chair" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">20% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Full Body Massage Chair</h3>
                   <p class="text-sm text-slate-500">BloomTech</p>
@@ -507,15 +530,15 @@
                   <span>⭐ 5.0</span>
                   <span class="text-lg font-semibold text-slate-900">$ 5999.99</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-9.jpg" alt="Bulletproof Glass" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">10% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-9.jpg" alt="Bulletproof Glass" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">10% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Bulletproof Glass</h3>
                   <p class="text-sm text-slate-500">ArmorZone</p>
@@ -524,15 +547,15 @@
                   <span>⭐ 4.4</span>
                   <span class="text-lg font-semibold text-slate-900">$ 100.00</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-10.jpg" alt="iRobot Roombas 2.0" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">15% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-10.jpg" alt="iRobot Roombas 2.0" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">15% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">iRobot Roombas 2.0</h3>
                   <p class="text-sm text-slate-500">Craft Collective</p>
@@ -541,15 +564,15 @@
                   <span>⭐ 4.8</span>
                   <span class="text-lg font-semibold text-slate-900">$ 250.00</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-11.jpg" alt="Premium Leather Wallet" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">10% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-11.jpg" alt="Premium Leather Wallet" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">10% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">Lego Titanic (10294 Pieces)</h3>
                   <p class="text-sm text-slate-500">Craft Collective</p>
@@ -558,15 +581,15 @@
                   <span>⭐ 4.9</span>
                   <span class="text-lg font-semibold text-slate-900">$950.00</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
               <div class="relative overflow-hidden">
-                <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src="./test-images/product-12.jpg" alt="Premium Leather Wallet" />
-                <span class="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white">18% Off</span>
+                <img class="object-cover w-full h-64 transition duration-500 group-hover:scale-105" src="./test-images/product-12.jpg" alt="Premium Leather Wallet" />
+                <span class="absolute px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-full left-4 top-4">18% Off</span>
               </div>
-              <div class="space-y-3 p-6">
+              <div class="p-6 space-y-3">
                 <div>
                   <h3 class="text-xl font-semibold text-slate-900">MacBook Pro 16 (M5 Pro)</h3>
                   <p class="text-sm text-slate-500">Apple Inc.</p>
@@ -575,14 +598,14 @@
                   <span>⭐ 4.8</span>
                   <span class="text-lg font-semibold text-slate-900">$ 3107.25</span>
                 </div>
-                <button data-product-id="${product.id}" class="add-to-cart inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Add to Cart</button>
+                <button data-product-id="${product.id}" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full add-to-cart hover:bg-blue-700">Add to Cart</button>
               </div>
             </article>
         </div>
       </section>
 
-      <section id="deals" class="bg-gradient-to-br from-blue-500 via-cyan-500 to-slate-900 py-16 text-white">
-        <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+      <section id="deals" class="py-16 text-white bg-gradient-to-br from-blue-500 via-cyan-500 to-slate-900">
+        <div class="px-4 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
           <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p class="text-sm uppercase tracking-[0.3em] text-cyan-100">Best deals</p>
@@ -590,23 +613,23 @@
             </div>
             <p class="max-w-xl text-sm text-cyan-100/90">Limited-time promotions on select collections from top vendors.</p>
           </div>
-          <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <div class="grid gap-6 mt-10 lg:grid-cols-3">
             <article class="group overflow-hidden rounded-[2rem] bg-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
               <div class="flex items-center justify-between gap-4">
                 <div>
                   <p class="text-sm uppercase tracking-[0.25em] text-cyan-100">Sale 45% off</p>
                   <h3 class="mt-4 text-2xl font-semibold text-white">Smart home essentials</h3>
                 </div>
-                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white">
-                  <i class="fa-solid fa-hourglass-half fa-spin text-yellow-300 text-2xl"></i>
+                <span class="inline-flex px-3 py-2 text-xs font-semibold text-white uppercase">
+                  <i class="text-2xl text-yellow-300 fa-solid fa-hourglass-half fa-spin"></i>
                 </span>
               </div>
               <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem]">
-                <img class="h-52 w-full bg-slate-900 object-cover bg-cover bg-center transition duration-500 group-hover:scale-105" src="./test-images/deal-1.jpg" alt="Smart home essentials"/>
+                <img class="object-cover w-full transition duration-500 bg-center bg-cover h-52 bg-slate-900 group-hover:scale-105" src="./test-images/deal-1.jpg" alt="Smart home essentials"/>
               </div>
-              <div class="mt-6 flex items-center justify-between gap-3">
+              <div class="flex items-center justify-between gap-3 mt-6">
                 <p class="text-sm text-cyan-100/90">Shop now and enjoy a seamless checkout.</p>
-                <button class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Shop Now</button>
+                <button class="px-5 py-3 text-sm font-semibold transition bg-white rounded-full text-slate-900 hover:bg-slate-100">Shop Now</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] bg-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft ">
@@ -615,16 +638,16 @@
                   <p class="text-sm uppercase tracking-[0.25em] text-cyan-100">Sale 30% off</p>
                   <h3 class="mt-4 text-2xl font-semibold text-white">Designer fashion picks</h3>
                 </div>
-                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white">
-                  <i class="fa-solid fa-fire fa-wag text-orange-400 text-2xl"></i>
+                <span class="inline-flex px-3 py-2 text-xs font-semibold text-white uppercase">
+                  <i class="text-2xl text-orange-400 fa-solid fa-fire fa-wag"></i>
                 </span>
               </div>
               <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem]">
-                <img class="h-52 w-full bg-slate-900 object-cover bg-cover bg-center transition duration-500 group-hover:scale-105" src="./test-images/deal-2.jpg" alt="Designer fashion picks"/>
+                <img class="object-cover w-full transition duration-500 bg-center bg-cover h-52 bg-slate-900 group-hover:scale-105" src="./test-images/deal-2.jpg" alt="Designer fashion picks"/>
               </div>
-              <div class="mt-6 flex items-center justify-between gap-3">
+              <div class="flex items-center justify-between gap-3 mt-6">
                 <p class="text-sm text-cyan-100/90">Exclusive offers for summers and events.</p>
-                <button class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Shop Now</button>
+                <button class="px-5 py-3 text-sm font-semibold transition bg-white rounded-full text-slate-900 hover:bg-slate-100">Shop Now</button>
               </div>
             </article>
             <article class="group overflow-hidden rounded-[2rem] bg-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft ">
@@ -633,22 +656,22 @@
                   <p class="text-sm uppercase tracking-[0.25em] text-cyan-100">Sale 50% off</p>
                   <h3 class="mt-4 text-2xl font-semibold text-white">Outdoor adventure gear</h3>
                 </div>
-                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white">
-                  <i class="fa-solid fa-piggy-bank fa-bounce text-pink-400 text-2xl"></i>
+                <span class="inline-flex px-3 py-2 text-xs font-semibold text-white uppercase">
+                  <i class="text-2xl text-pink-400 fa-solid fa-piggy-bank fa-bounce"></i>
                 </span>
               </div>
               <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem]">
-                <img class="h-52 w-full bg-slate-900 object-cover bg-cover bg-center transition duration-500 group-hover:scale-105" src="./test-images/deal-3.jpg" alt="Outdoor adventure gear"/>
+                <img class="object-cover w-full transition duration-500 bg-center bg-cover h-52 bg-slate-900 group-hover:scale-105" src="./test-images/deal-3.jpg" alt="Outdoor adventure gear"/>
               </div>
-              <div class="mt-6 flex items-center justify-between gap-3">
+              <div class="flex items-center justify-between gap-3 mt-6">
                 <p class="text-sm text-cyan-100/90">Grab this deal before stock runs out.</p>
-                <button class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Shop Now</button>
+                <button class="px-5 py-3 text-sm font-semibold transition bg-white rounded-full text-slate-900 hover:bg-slate-100">Shop Now</button>
               </div>
             </article>
           </div>
         </div>
       </section>
-      <section id="testimonials" class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <section id="testimonials" class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p class="text-sm uppercase tracking-[0.3em] text-blue-600">Customer testimonials</p>
@@ -656,42 +679,42 @@
           </div>
           <p class="max-w-xl text-sm text-slate-500">Real reviews from customers who love our multi-vendor marketplace.</p>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <div class="grid gap-6 mt-10 lg:grid-cols-3">
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
             <div class="flex items-center gap-4">
-              <img class="h-14 w-14 rounded-full object-cover" src="./test-images/customer-1.jpg" alt="Customer photo" />
+              <img class="object-cover rounded-full h-14 w-14" src="./test-images/customer-1.jpg" alt="Customer photo" />
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">Daft Punk</h3>
                 <p class="text-sm text-slate-500">Verified buyer</p>
               </div>
             </div>
-            <div class="mt-6 flex items-center gap-2 text-amber-500">
+            <div class="flex items-center gap-2 mt-6 text-amber-500">
               <span>⭐</span><span>4.9</span>
             </div>
             <p class="mt-5 text-sm leading-7 text-slate-600">"The storefront selection is incredible, and the checkout experience was smooth. I found the perfect gift quickly."</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
             <div class="flex items-center gap-4">
-              <img class="h-14 w-14 rounded-full object-cover" src="./test-images/customer-2.jpg" alt="Customer photo" />
+              <img class="object-cover rounded-full h-14 w-14" src="./test-images/customer-2.jpg" alt="Customer photo" />
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">Marshmello</h3>
                 <p class="text-sm text-slate-500">Frequent shopper</p>
               </div>
             </div>
-            <div class="mt-6 flex items-center gap-2 text-amber-500">
+            <div class="flex items-center gap-2 mt-6 text-amber-500">
               <span>⭐</span><span>5.0</span>
             </div>
             <p class="mt-5 text-sm leading-7 text-slate-600">"Amazing deals and a premium feel on mobile. The vendor ratings helped me choose the best store for electronics."</p>
           </article>
           <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-soft hover:shadow-blue-500/50">
             <div class="flex items-center gap-4">
-              <img class="h-14 w-14 rounded-full object-cover" src="./test-images/customer-3.jpg" alt="Customer photo" />
+              <img class="object-cover rounded-full h-14 w-14" src="./test-images/customer-3.jpg" alt="Customer photo" />
               <div>
                 <h3 class="text-xl font-semibold text-slate-900">DeadMau5</h3>
                 <p class="text-sm text-slate-500">Small business buyer</p>
               </div>
             </div>
-            <div class="mt-6 flex items-center gap-2 text-amber-500">
+            <div class="flex items-center gap-2 mt-6 text-amber-500">
               <span>⭐</span><span>4.8</span>
             </div>
             <p class="mt-5 text-sm leading-7 text-slate-600">"I love the modern interface and fast navigation. The cart drawer made managing products easy and enjoyable."</p>
@@ -699,7 +722,7 @@
         </div>
       </section>
 
-      <section id="contact" class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <section id="contact" class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="rounded-[2rem] bg-white p-8 sm:p-12 border border-slate-200 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-soft hover:shadow-blue-500/50">
           <div class="grid gap-8 lg:grid-cols-2 lg:items-center lg:justify-between">
             <div>
@@ -708,8 +731,8 @@
               <p class="mt-4 text-sm leading-7 text-slate-500">Our team is ready to help you grow with a beautiful storefront and premium support.</p>
             </div>
             <div class="space-y-4 sm:flex sm:items-center sm:justify-end sm:gap-3">
-              <a href="mailto:support@markethub.com" class="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600">Contact support</a>
-              <a href="#vendors" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-500 hover:text-blue-600">Start selling</a>
+              <a href="mailto:support@markethub.com" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition bg-blue-500 rounded-full hover:bg-blue-600">Contact support</a>
+              <a href="#vendors" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold transition border rounded-full border-slate-200 bg-slate-50 text-slate-700 hover:border-blue-500 hover:text-blue-600">Start selling</a>
             </div>
           </div>
         </div>
@@ -717,40 +740,40 @@
     </main>
 
     <aside id="cartDrawer" class="fixed right-0 top-0 z-50 h-full w-full max-w-md translate-x-full bg-slate-100 shadow-2xl lg:w-[420px]">
-      <div class="flex h-full flex-col bg-white">
-        <div class="flex items-center justify-between border-b border-slate-200 px-6 py-5">
-          <button id="closeCart" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:text-red-500 hover:bg-red-200" aria-label="Close cart drawer">
+      <div class="flex flex-col h-full bg-white">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-slate-200">
+          <button id="closeCart" class="inline-flex items-center justify-center w-10 h-10 transition border rounded-full border-slate-200 text-slate-700 hover:text-red-500 hover:bg-red-200" aria-label="Close cart drawer">
             <i class="fa-solid fa-xmark"></i>
           </button>
           <div>
-            <p class="text-lg font-semibold text-slate-900 text-right">Your cart</p>
+            <p class="text-lg font-semibold text-right text-slate-900">Your cart</p>
             <p class="text-sm text-slate-500">Manage selected items before checkout.</p>
           </div>
         </div>
-        <div class="flex-1 overflow-y-auto px-6 py-5 no-scrollbar">
+        <div class="flex-1 px-6 py-5 overflow-y-auto no-scrollbar">
           <div id="cartItems" class="space-y-4"></div>
           <div id="emptyCartMessage" class="bg-slate-50 pr-8 pl-8 pt-[15rem] text-center text-slate-500">
-            <i class="fa-solid fa-shopping-cart fa-float text-3xl"></i>
+            <i class="text-3xl fa-solid fa-shopping-cart fa-float"></i>
             <p class="text-lg font-semibold">Your cart is empty</p>
           </div>
         </div>
-        <div class="border-t border-slate-200 px-6 py-5">
+        <div class="px-6 py-5 border-t border-slate-200">
           <div class="flex items-center justify-between text-sm text-slate-500">
             <span>Total Items</span>
             <span id="cartTotalQuantity">0</span>
           </div>
-          <div class="mt-3 flex items-center justify-between text-2xl font-semibold text-slate-900">
+          <div class="flex items-center justify-between mt-3 text-2xl font-semibold text-slate-900">
             <span>Total Price</span>
             <span id="cartTotalPrice">$0.00</span>
           </div>
-          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-            <button id="checkoutButton" class="flex-1 rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Checkout</button>
+          <div class="flex flex-col gap-3 mt-6 sm:flex-row">
+            <button id="checkoutButton" class="flex-1 px-5 py-3 text-sm font-semibold text-white transition bg-blue-600 rounded-full hover:bg-blue-700">Checkout</button>
           </div>
         </div>
       </div>
     </aside>
 
-    <div id="toast" class="pointer-events-none fixed right-6 top-6 hidden rounded-full bg-slate-900 px-5 py-3 text-sm text-white shadow-soft"></div>
+    <div id="toast" class="fixed hidden px-5 py-3 text-sm text-white rounded-full pointer-events-none right-6 top-6 bg-slate-900 shadow-soft"></div>
     <script>
       const heroSlides = Array.from(document.querySelectorAll('[data-slide]'));
       const heroDots = Array.from(document.querySelectorAll('.hero-dot'));
@@ -874,7 +897,7 @@
               (item) => `
               <div class="rounded-[2rem] border border-slate-200 bg-slate-50 p-4">
                 <div class="flex items-start gap-4">
-                  <img class="h-20 w-20 rounded-3xl object-cover" src="${item.image}" alt="${item.name}" />
+                  <img class="object-cover w-20 h-20 rounded-3xl" src="${item.image}" alt="${item.name}" />
                   <div class="flex-1">
                     <div class="flex items-start justify-between gap-3">
                       <div>
@@ -883,14 +906,14 @@
                       </div>
                       <button data-remove-id="${item.id}" class="text-sm font-semibold text-red-600 transition hover:text-red-700">Remove</button>
                     </div>
-                    <div class="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <div class="flex flex-wrap items-center gap-3 mt-4 text-sm text-slate-600">
                       <span>Unit: ${formatCurrency(item.price)}</span>
                       <span>Subtotal: ${formatCurrency(item.price * item.quantity)}</span>
                     </div>
-                    <div class="mt-4 flex items-center gap-3 rounded-full bg-white p-2 shadow-sm">
-                      <button data-decrease-id="${item.id}" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition hover:bg-slate-200" aria-label="Decrease quantity">-</button>
+                    <div class="flex items-center gap-3 p-2 mt-4 bg-white rounded-full shadow-sm">
+                      <button data-decrease-id="${item.id}" class="inline-flex items-center justify-center w-10 h-10 transition rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200" aria-label="Decrease quantity">-</button>
                       <span class="min-w-[2rem] text-center text-sm font-semibold text-slate-900">${item.quantity}</span>
-                      <button data-increase-id="${item.id}" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white transition hover:bg-blue-700" aria-label="Increase quantity">+</button>
+                      <button data-increase-id="${item.id}" class="inline-flex items-center justify-center w-10 h-10 text-white transition bg-blue-600 rounded-full hover:bg-blue-700" aria-label="Increase quantity">+</button>
                     </div>
                   </div>
                 </div>
