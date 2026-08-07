@@ -5,49 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MarketHub</title>
     <link rel="shortcut icon" href="./test-images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scrollbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            boxShadow: {
-              soft: '0 25px 50px -12px rgba(15, 23, 42, 0.35)',
-            },
-            colors: {
-              brand: {
-                500: '#2563eb',
-                600: '#1d4ed8',
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .slide-fade {
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-      .carousel-hidden {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      .carousel-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      #cartDrawer {
-        transition: transform 0.35s ease;
-      }
-    </style>
+    <script src="tailwind.config.js"></script>
   </head>
   <body class="bg-slate-50 text-slate-900 antialiased">
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
@@ -55,9 +16,7 @@
         <div class="flex flex-wrap items-center justify-between gap-4 py-4">
           <div class="flex items-center gap-3">
             <button id="mobileMenuButton" class="lg:hidden inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 hover:bg-slate-100 transition" aria-label="Open menu">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <i class="fa-solid fa-bars h-5 w-5 pt-[2px]"></i>
             </button>
             <a href="#home" class="flex items-center gap-3">
               <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white font-bold shadow-soft">
@@ -226,16 +185,16 @@
                 <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div class="flex items-center gap-3">
                     <button id="prevSlide" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow hover:bg-white transition" aria-label="Previous slide">
-                      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                      <i class="fa-solid fa-chevron-left h-5 w-5 pt-[2px]"></i>
                     </button>
                     <button id="nextSlide" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow hover:bg-white transition" aria-label="Next slide">
-                      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                      <i class="fa-solid fa-chevron-right h-5 w-5 pt-[2px]"></i>
                     </button>
                   </div>
                   <div class="flex items-center justify-center gap-2">
-                    <button class="hero-dot h-3.5 w-3.5 rounded-full bg-white/70 ring-1 ring-white/90" data-dot="0" aria-label="Slide 1"></button>
-                    <button class="hero-dot h-3.5 w-3.5 rounded-full bg-white/40 ring-1 ring-white/60" data-dot="1" aria-label="Slide 2"></button>
-                    <button class="hero-dot h-3.5 w-3.5 rounded-full bg-white/40 ring-1 ring-white/60" data-dot="2" aria-label="Slide 3"></button>
+                    <button class="hero-dot h-3.5 w-3.5 rounded-full bg-white/70 ring-1 ring-white/90 transition hover:-translate-y-1" data-dot="0" aria-label="Slide 1"></button>
+                    <button class="hero-dot h-3.5 w-3.5 rounded-full bg-white/40 ring-1 ring-white/60 transition hover:-translate-y-1" data-dot="1" aria-label="Slide 2"></button>
+                    <button class="hero-dot h-3.5 w-3.5 rounded-full bg-white/40 ring-1 ring-white/60 transition hover:-translate-y-1" data-dot="2" aria-label="Slide 3"></button>
                   </div>
                 </div>
               </div>
@@ -638,9 +597,13 @@
                   <p class="text-sm uppercase tracking-[0.25em] text-cyan-100">Sale 45% off</p>
                   <h3 class="mt-4 text-2xl font-semibold text-white">Smart home essentials</h3>
                 </div>
-                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white"><i class="fa-solid fa-hourglass-half text-yellow-300 text-2xl"></i></span>
+                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white">
+                  <i class="fa-solid fa-hourglass-half fa-spin text-yellow-300 text-2xl"></i>
+                </span>
               </div>
-              <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem] bg-slate-900 bg-cover bg-center" style="background-image:url('./test-images/deal-1.jpg')"></div>
+              <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem]">
+                <img class="h-52 w-full bg-slate-900 object-cover bg-cover bg-center transition duration-500 group-hover:scale-105" src="./test-images/deal-1.jpg" alt="Smart home essentials"/>
+              </div>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <p class="text-sm text-cyan-100/90">Shop now and enjoy a seamless checkout.</p>
                 <button class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Shop Now</button>
@@ -652,9 +615,13 @@
                   <p class="text-sm uppercase tracking-[0.25em] text-cyan-100">Sale 30% off</p>
                   <h3 class="mt-4 text-2xl font-semibold text-white">Designer fashion picks</h3>
                 </div>
-                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white"><i class="fa-solid fa-fire text-orange-400 text-2xl"></i></span>
+                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white">
+                  <i class="fa-solid fa-fire fa-wag text-orange-400 text-2xl"></i>
+                </span>
               </div>
-              <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem] bg-slate-900 bg-cover bg-center" style="background-image:url('./test-images/deal-2.jpg')"></div>
+              <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem]">
+                <img class="h-52 w-full bg-slate-900 object-cover bg-cover bg-center transition duration-500 group-hover:scale-105" src="./test-images/deal-2.jpg" alt="Designer fashion picks"/>
+              </div>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <p class="text-sm text-cyan-100/90">Exclusive offers for summers and events.</p>
                 <button class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Shop Now</button>
@@ -666,9 +633,13 @@
                   <p class="text-sm uppercase tracking-[0.25em] text-cyan-100">Sale 50% off</p>
                   <h3 class="mt-4 text-2xl font-semibold text-white">Outdoor adventure gear</h3>
                 </div>
-                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white"><i class="fa-solid fa-piggy-bank text-pink-400 text-2xl"></i></span>
+                <span class="inline-flex px-3 py-2 text-xs font-semibold uppercase text-white">
+                  <i class="fa-solid fa-piggy-bank fa-bounce text-pink-400 text-2xl"></i>
+                </span>
               </div>
-              <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem] bg-slate-900 bg-cover bg-center" style="background-image:url('./test-images/deal-3.jpg')"></div>
+              <div class="mt-6 h-52 overflow-hidden rounded-[1.75rem]">
+                <img class="h-52 w-full bg-slate-900 object-cover bg-cover bg-center transition duration-500 group-hover:scale-105" src="./test-images/deal-3.jpg" alt="Outdoor adventure gear"/>
+              </div>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <p class="text-sm text-cyan-100/90">Grab this deal before stock runs out.</p>
                 <button class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Shop Now</button>
@@ -729,7 +700,7 @@
       </section>
 
       <section id="contact" class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="rounded-[2rem] bg-white p-8 sm:p-12 border border-slate-200 transition hover:border-blue-300 hover:shadow-soft hover:shadow-blue-500/50">
+        <div class="rounded-[2rem] bg-white p-8 sm:p-12 border border-slate-200 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-soft hover:shadow-blue-500/50">
           <div class="grid gap-8 lg:grid-cols-2 lg:items-center lg:justify-between">
             <div>
               <p class="text-sm uppercase tracking-[0.3em] text-blue-600">Get in touch</p>
